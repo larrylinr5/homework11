@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <title>Variables and Operation</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script>
+        function Show(msg) {
+            document.getElementById('Label1').innerHTML = msg ;
+        }
+
+        function Button1_Click()
+        { 
+            //數值
+            var height = document.getElementById('h1').value;
+                weight = document.getElementById('w1').value;  
+            //bmi
+            Show("BMI結果 :  " + GetBmi(height, weight));
+        }
+
+        function GetBmi(height, weight) {
+            var bmi = 0;
+            H = height / 100;
+            bmi = weight / (H * H);
+            return bmi;
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <label>身高 : </label>
+        <input id="h1" type="text" name="account" placeholder="請輸入身高" size="10">
+    </div>
+    <div>
+        <label>體重 : </label>
+        <input id="w1" type="text" name="account" placeholder="請輸入身高" size="10">
+    </div>
+    <div>
+            <label id="Label1">BMI結果 :</label><br />
+    </div>
+    <input type="button" id="Button1" onclick="Button1_Click();" value="計算">
+</body>
+
+</html>
